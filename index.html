@@ -66,7 +66,8 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 48px}
 .tab[aria-disabled="true"]{border-style:dashed;opacity:.6;cursor:not-allowed}
 .tab[aria-disabled="true"]:hover{background:transparent}
 .panel{margin-top:14px;background:var(--paper);color:var(--ink);border-radius:22px;padding:24px 18px 28px;min-height:460px}
-@media(min-width:700px){.panel{padding:34px 40px 38px}}
+/*@media(min-width:700px){.panel{padding:34px 40px 38px}}*/
+@media(min-width:700px){.panel{padding:22px 32px 26px;min-height:0}}
 .panel h2{font:700 clamp(22px,4.8vw,30px)/1.15 var(--display);letter-spacing:-.01em;margin:0 0 6px}
 .lede{color:var(--ink-soft);margin:0 0 6px;max-width:60ch}
 
@@ -281,6 +282,49 @@ details[open]>summary .more{transform:rotate(180deg)}
 .wrow{display:flex;justify-content:space-between;gap:12px;align-items:center}
 .wrow small{display:block;color:var(--ink-soft);font-size:14.5px}
 .wcount{font:700 18px var(--display);white-space:nowrap}
+/*add*/
+/* PC only: shrink Section 1, the Section 2/3 question view, and the intro
+   pop-up so they fit one screen. Section/quiz summaries, Results, Progress
+   and the Teacher Dashboard are left at normal size and may still scroll. */
+@media(min-width:700px){
+  main{padding:14px 16px 28px}
+  .tabs{gap:6px}
+  .tab{min-height:54px;padding:6px 4px}
+
+  /* intro pop-up */
+  .modal:not(.wide){padding:16px 20px 18px}
+  .modal:not(.wide) .stage{padding:12px 14px;margin-bottom:10px}
+  .modal:not(.wide) .word{font-size:30px}
+  .modal:not(.wide) h2{font-size:22px;margin-bottom:6px}
+  .modal:not(.wide) p{margin-bottom:8px}
+  .modal:not(.wide) ul{gap:5px;margin-bottom:8px}
+  .modal:not(.wide) li{padding:6px 12px}
+  .modal-top{margin-bottom:8px}
+
+  /* Section 1 */
+  .rule-nav{margin:10px 0 14px;gap:6px}
+  .rule-btn{min-height:42px;padding:6px 10px 6px 6px;font-size:14px}
+  .rule-card h3{font-size:19px;margin-bottom:6px}
+  .rule-card p{margin-bottom:8px}
+  .stage{padding:12px 14px 14px;margin:2px 0 10px}
+  .word{font-size:32px}
+  .pairs{gap:6px 14px}
+  .pair{font-size:16px}
+  .note{padding:9px 13px;margin-bottom:8px}
+  .actions{margin-top:14px;gap:8px}
+
+  /* Section 2 & 3 question view (not the summary pages) */
+  .progress{margin:10px 0 12px}
+  .opts{gap:7px;margin-bottom:10px}
+  .opt{min-height:46px;padding:8px 12px;font-size:16px}
+  .opt .k{width:28px;height:28px;font-size:14px}
+  .fb{padding:10px 14px 8px;margin-bottom:10px}
+  .fb .title{font-size:17px}
+  .fb .eq{font-size:16px}
+  .fb p{margin:3px 0}
+  .ask{margin:2px 0 10px}
+  .ans{font-size:20px;padding:10px 14px;margin-bottom:10px}
+}
 @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes chip{from{opacity:0;transform:translateY(-10px) scale(.5)}to{opacity:1;transform:none}}
 
